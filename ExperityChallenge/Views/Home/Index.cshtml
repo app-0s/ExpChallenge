@@ -4,6 +4,7 @@
 
 @model EventTypeModel
 
+<!--Form to enter the event input-->
 <div class="container">
     @using (Html.BeginForm(FormMethod.Post, new { id = "eventForm" }))
     {
@@ -13,22 +14,6 @@
         <input type="submit" id="btnEventSubmit" value="Submit Event" />
     }
 </div>
-
-<!-- buttons here which would call the event controller-->
-@*<div class="container">
-    <div class="col-med">
-        <input id="btn-reg"
-               type="button"
-               value="Register Type"
-         />
-    </div>
-    <div class="col-med">
-        <input id="btn-diag"
-               type="button"
-               value="Diagnose Type"
-        />
-    </div>
-</div>*@
 
 <!--Display Event Results-->
 <div id="resultLoad">

@@ -10,7 +10,7 @@ namespace ExperityChallenge.DomainLogic
     public class ExperityEvents : IExperityEvents
     {
         /// <summary>
-        /// builds string for numbers 1 - 100, with special strings created for multiples of 3, 5, and both 3 & 5
+        /// builds string collection for numbers 1 - 100, with special strings created for multiples of 3, 5, and both 3 & 5
         /// </summary>
         /// <returns></returns>
         public async Task<IList<EventResultModel>> Register()
@@ -23,7 +23,7 @@ namespace ExperityChallenge.DomainLogic
         }
 
         /// <summary>
-        /// builds string for numbers 1 - 100, with special strings created for multiples of 2, 7, and both 2 & 7
+        /// builds string for collection numbers 1 - 100, with special strings created for multiples of 2, 7, and both 2 & 7
         /// </summary>
         /// <returns></returns>
         public async Task<IList<EventResultModel>> Diagnose()
@@ -35,7 +35,7 @@ namespace ExperityChallenge.DomainLogic
         }
 
         /// <summary>
-        /// Builds string collection
+        /// Builds string collection based on multiples and strings passed as parameters
         /// </summary>
         /// <param name="contentStrA">Word to be surrounded by quotes</param>
         /// <param name="contentStrB">Word to be surrounded by quotes</param>
@@ -51,7 +51,7 @@ namespace ExperityChallenge.DomainLogic
                 
                 for (int i = 1; i <= 100; i++)
                 {
-                    if (i % (mul1 * mul2) == 0)
+                    if (i % (mul1 * mul2) == 0) // multiples of both mul1 and mul2
                     {
                         EventResultModel newModel = new EventResultModel();
                         newModel.Number = i;

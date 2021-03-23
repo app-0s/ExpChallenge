@@ -24,40 +24,11 @@ namespace ExperityChallenge.Controllers
             _experityEvents = events;
         }
 
-        [HttpGet("register")]
-        public async Task<IActionResult> GetRegistration()
-        {
-            try
-            {
-                // call register method of ExperityEvents implementation
-                var regStrs = await _experityEvents.Register();
-
-                return PartialView("EventResultsPartial", regStrs);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest($"Error retrieving data: {ex.Message}");
-            }
-            
-        }
-
-        [HttpGet("diagnose")]
-        public async Task<IActionResult> GetDiagnosis()
-        {
-            try
-            {
-                // call diagnose method of ExperityEvents implementation
-                var diagStrs = await _experityEvents.Diagnose();
-
-                return PartialView("EventResultsPartial", diagStrs);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest($"Error retrieving data: {ex.Message}");
-            }
-        }
-
         [HttpPost("GetEventResult")]
+        /// <summary>
+        /// Gets input passed from form, compares input string against existing eventtypes, 
+        /// then returns a partial view that outputs event data 
+        /// </summary>
         public async Task<IActionResult> GetEventResult(EventTypeModel eventInput)
         {
             IList<EventResultModel> results = new List<EventResultModel>();
