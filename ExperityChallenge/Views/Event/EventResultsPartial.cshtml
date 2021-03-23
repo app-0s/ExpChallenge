@@ -1,0 +1,22 @@
+﻿@model IList<EventResultModel>
+
+@{ 
+    Layout = null;
+}
+
+<div class="container" id="resContainer">
+    @if (Model != null)
+    {
+
+        <!--Print out the results-->
+        var str = "";
+        foreach (var ev in Model)
+        {
+            <!--Build string representation-->
+            str += $"{ev.StringRepresentation} ";
+        }
+        <!--Output the string-->
+        <div><p>@str</p></div>
+
+    }
+</div>
