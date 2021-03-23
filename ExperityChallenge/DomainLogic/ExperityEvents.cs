@@ -23,7 +23,7 @@ namespace ExperityChallenge.DomainLogic
         }
 
         /// <summary>
-        /// builds string for collection numbers 1 - 100, with special strings created for multiples of 2, 7, and both 2 & 7
+        /// builds string collection for numbers 1 - 100, with special strings created for multiples of 2, 7, and both 2 & 7
         /// </summary>
         /// <returns></returns>
         public async Task<IList<EventResultModel>> Diagnose()
